@@ -35,13 +35,11 @@ let velocidadPersonaje=20;
 moverIzquierda=function(){
     personajeX=personajeX-velocidadPersonaje;
     actualizarPantalla();
-    detectarAtrapado();
 }
 
 moverDerecha=function(){
     personajeX=personajeX+velocidadPersonaje;
     actualizarPantalla();
-    detectarAtrapado();
 }
 
 actualizarPantalla=function(){
@@ -63,6 +61,7 @@ dibujarLimon=function(){
 bajarLimon=function(){
     limonY=limonY+10;
     actualizarPantalla();
+    detectarAtrapado();
 }
 
 detectarAtrapado=function(){
@@ -72,4 +71,10 @@ detectarAtrapado=function(){
         limonY<=personajeY+ALTURA_PERSONAJE){
         alert("ATRAPADO");
         }    
+}
+
+probarAleatorio=function(){
+    let aleatorio;
+    aleatorio=generarAleatorio(10,80);
+    console.log(aleatorio);
 }
