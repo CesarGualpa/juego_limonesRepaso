@@ -45,6 +45,7 @@ actualizarPantalla=function(){
     limpiarCanva();
     dibujarSuelo();
     dibujarPersonaje();
+    dibujarLimon();
 }
 
 limpiarCanva=function(){
@@ -54,4 +55,9 @@ limpiarCanva=function(){
 dibujarLimon=function(){
     ctx.fillStyle="#EFFF36"
     ctx.fillRect(limonX,limonY,ANCHO_LIMON,ALTO_LIMON);
+}
+
+bajarLimon=function(){
+    limonY=limonY+10;
+    actualizarPantalla();
 }
