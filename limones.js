@@ -6,7 +6,7 @@ ctx=canvas.getContext("2d");
 iniciar=function(){
     dibujarSuelo();
     dibujarPersonaje();
-    dibujarLimon();
+    aparecerLimon();
 }
 
 const ALTURA_SUELO=50;
@@ -69,7 +69,7 @@ detectarAtrapado=function(){
         limonX<=personajeX+ANCHO_PERSONAJE &&
         limonY+ALTURA_LIMON>=personajeY && 
         limonY<=personajeY+ALTURA_PERSONAJE){
-        alert("ATRAPADO");
+        aparecerLimon();
         }    
 }
 
@@ -77,4 +77,10 @@ probarAleatorio=function(){
     let aleatorio;
     aleatorio=generarAleatorio(10,80);
     console.log(aleatorio);
+}
+
+aparecerLimon=function(){
+    limonX=generarAleatorio(0,canvas.width-ANCHO_LIMON);
+    limonY=0;
+    actualizarPantalla();
 }
