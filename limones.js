@@ -4,6 +4,7 @@ canvas=document.getElementById("areaJuego");
 ctx=canvas.getContext("2d");
 
 iniciar=function(){
+    setInterval(bajarLimon,velocidaCaidaLimon);//primerParametro: funcion, segundoParametro: tiempo en ms
     dibujarSuelo();
     dibujarPersonaje();
     aparecerLimon();
@@ -21,6 +22,7 @@ let limonX=canvas.width/2;
 let limonY=0;
 let puntaje=0;
 let vida=3;
+let velocidaCaidaLimon=250;
 
 dibujarSuelo=function(){
     ctx.fillStyle="green"
