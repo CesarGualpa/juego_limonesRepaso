@@ -19,6 +19,7 @@ let personajeX=canvas.width/2;
 let personajeY=canvas.height-(ALTURA_SUELO+ALTURA_PERSONAJE);
 let limonX=canvas.width/2;
 let limonY=0;
+let puntaje=0;
 
 dibujarSuelo=function(){
     ctx.fillStyle="green"
@@ -70,13 +71,11 @@ detectarAtrapado=function(){
         limonY+ALTURA_LIMON>=personajeY && 
         limonY<=personajeY+ALTURA_PERSONAJE){
         aparecerLimon();
+        puntaje=puntaje+1;
+        let componente;
+        componente=document.getElementById("txtPuntaje");
+        componente.textContent=puntaje;
         }    
-}
-
-probarAleatorio=function(){
-    let aleatorio;
-    aleatorio=generarAleatorio(10,80);
-    console.log(aleatorio);
 }
 
 aparecerLimon=function(){
