@@ -20,6 +20,7 @@ let personajeY=canvas.height-(ALTURA_SUELO+ALTURA_PERSONAJE);
 let limonX=canvas.width/2;
 let limonY=0;
 let puntaje=0;
+let vida=3;
 
 dibujarSuelo=function(){
     ctx.fillStyle="green"
@@ -63,6 +64,7 @@ bajarLimon=function(){
     limonY=limonY+10;
     actualizarPantalla();
     detectarAtrapado();
+    detectarPisoLimon();
 }
 
 detectarAtrapado=function(){
@@ -76,6 +78,16 @@ detectarAtrapado=function(){
         componente=document.getElementById("txtPuntaje");
         componente.textContent=puntaje;
         }    
+}
+
+detectarPisoLimon=function(){
+    if(limonY+ALTURA_LIMON==canvas.height-ALTURA_SUELO){
+    aparecerLimon();
+    vida=vida-1;
+    let componente;
+    componente=document.getElementById("txtVida");
+    componente.textContent=vida;
+    }
 }
 
 aparecerLimon=function(){
